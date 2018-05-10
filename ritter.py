@@ -1,4 +1,7 @@
 #!/usr/bin/python
+# This file modifies the original file extract_entities.py found here https://github.com/aritter/twitter_nlp/tree/master/python/ner
+# such that the entity recognition tool can be imported as a module
+# This file requires the download of the repository https://github.com/aritter/twitter_nlp
 
 import sys
 import os
