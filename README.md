@@ -20,4 +20,11 @@ The input_file.bz2 is a bz2 archive of a txt file which contains on each line a 
 the Twitter Streaming API. 
 The output_file.txt contains on each line a timestamp separated by a tab from the filtered and tagged text of a tweet.
 
+# Running Evidense
+Usage:
+python evidense.py current_month.txt previous_month.txt
 
+The code will compute the top 10 events in the current_month.txt file. 
+The previous_month.txt file is used in order to compute statistics for the locations. 
+Smaller time periods can be used, but for meaningfull results we recommend at least one week of data. 
+The files previous_month.txt and current_month.txt should be obtained by running the script process_file.py.  
