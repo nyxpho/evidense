@@ -3,6 +3,7 @@
 # such that the entity recognition tool can be imported as a module
 # This file requires the download of the repository https://github.com/aritter/twitter_nlp
 
+
 import sys
 import os
 import re
@@ -56,6 +57,7 @@ def GetLLda():
 
 class RitterTagger:
     def __init__(self):
+	self.numberLines = 0
         self.eventTagger = None
         self.posTagger = None
         self.chunkTagger = None
@@ -97,7 +99,17 @@ class RitterTagger:
 
 
     def process_tweet(self, line):
-    
+    	
+	self.numberLines = self.numberLines + 1
+
+	if self.numberLines == 1000:
+            self.numberLines = 0
+            self.ner.stdin.close()
+            self.ner.stdout.close()
+            os.kill(self.ner.pid, SIGTERM)       #Need to do this for python 2.4
+            self.ner.wait()
+            self.ner = GetNer('ner_nopos_nochunk.model')
+
         words = twokenize.tokenize(line)
         seq_features = []
         tags = []
