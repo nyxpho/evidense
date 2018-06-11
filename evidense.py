@@ -120,10 +120,10 @@ def quasiClique(g, word, gamma, sizeClique):
                 weightCandidate = weightCandidate + gedgeweight[edgeObj]
                 if gedgeweight[edgeObj] > maxEdgeCandidate:
                     maxEdgeCandidate = gedgeweight[edgeObj]
-                noPossibleEdges = len(subgraph) * (len(subgraph)+1)/2
-                gammaCandidate = (weightCandidate + weightSubgraph)*1.0/(maxEdgeCandidate * noPossibleEdges)
-                if gammaCandidate >= gamma:
-                    candidatesWeight.append((candidate, weightCandidate, maxEdgeCandidate))
+            noPossibleEdges = len(subgraph) * (len(subgraph)+1)/2
+            gammaCandidate = (weightCandidate + weightSubgraph)*1.0/(maxEdgeCandidate * noPossibleEdges)
+            if gammaCandidate >= gamma:
+                candidatesWeight.append((candidate, weightCandidate, maxEdgeCandidate))
 
         candidatesWeight.sort(key=lambda tup:tup[1], reverse = True)
         if len(candidatesWeight) == 0:
