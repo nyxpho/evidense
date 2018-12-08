@@ -32,3 +32,7 @@ The code will compute the top 10 events in the current_month.txt file.
 The previous_month.txt file is used in order to compute statistics for the locations. 
 Smaller time periods can be used, but for meaningfull results we recommend at least one week of data. 
 The files previous_month.txt and current_month.txt should be obtained by running the script process_file.py.  
+
+
+# Disaster tweets obtained using Evidense
+We will shortly update the repository with a new dataset and a full description of how it was collected. 
